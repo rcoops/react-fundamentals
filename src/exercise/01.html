@@ -3,14 +3,28 @@
 
 <!-- 🐨 Create (in HTML) a <body> with a <div> with the id of "root" -->
 <!-- 🐨 Then create a <script type="module"> for your JavaScript -->
+<html>
+  <head>
+    <script type="module">
+      const createEle = (type, attributes) => {
+        const ele = document.createElement(type);
+        Object.entries(attributes).forEach(([key, value]) => {
+          ele[key] = value;
+        });
+        return ele;
+      }
+      const root = createEle('div', { id: 'root' });
+      const content = createEle('div', { className: 'container', textContent: 'Hello World' });
+      // const root = document.createElement('div');
+      // root.id = 'root';
+      // const content = document.createElement('div');
+      // content.className = 'container';
+      // content.textContent = 'Hello World';
 
-<!-- These next instructions are to be written in JavaScript in the <script> tag -->
-<!-- 🐨 Create a div -->
-<!--   💰 document.createElement('div') -->
-
-<!-- 🐨 Set the div's textContent to 'Hello World' and className to 'container' -->
-<!--   💰 div.textContent = '...' -->
-
-<!-- 🐨 Append the div to the root div using `append` -->
-<!--   💰 document.getElementById('root') -->
-<!--   📜 https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append -->
+      document.body.append(root);
+      root.append(content);
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
