@@ -9,12 +9,14 @@
   <script type="text/babel">
     const Message = ({ children }) => <div className="message">{children}</div>;
 
-    const element = React.createElement(
-      'div',
-      { className: 'container' },
-      React.createElement(Message, { children: 'Hello World' }),
-      React.createElement(Message, { children: 'Goodbye World' })
-    );
+    const element = (
+      <div className="container">
+        <Message>
+          Hello World
+          <Message>Goodbye World</Message>
+        </Message>
+      </div>
+    )
     ReactDOM.render(element, document.getElementById('root'));
   </script>
 </body>
