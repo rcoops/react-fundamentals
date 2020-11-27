@@ -7,20 +7,13 @@
   <script src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
   <script type="text/babel">
-    // const message = ({ children }) => <div className="message">{children}</div>;
-    // const element = (
-    //   <div className="container">
-    //     {message({ children: 'Hello World' })}
-    //     {message({ children: 'Goodbye World' })}
-    //   </div>
-    // );
+    const Message = ({ children }) => <div className="message">{children}</div>;
 
-    const Message = ({ children }) => React.createElement('div', { className: 'message' }, ...children);
     const element = React.createElement(
       'div',
       { className: 'container' },
-      Message({ children: ['Hello World'] }),
-      Message({ children: ['Goodbye World'] }),
+      React.createElement(Message, { children: 'Hello World' }),
+      React.createElement(Message, { children: 'Goodbye World' })
     );
     ReactDOM.render(element, document.getElementById('root'));
   </script>
