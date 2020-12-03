@@ -14,10 +14,10 @@
       greeting: PropTypes.string.isRequired,
     };
     const element = (
-      <div className="container">
+      <>
         <Message greeting="Hello World"  />
         <Message greeting="Goodbye World" subject="Rick" />
-      </div>
+      </>
     )
     ReactDOM.render(element, document.getElementById('root'));
   </script>
