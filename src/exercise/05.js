@@ -4,8 +4,8 @@
 import * as React from 'react'
 import '../box-styles.css'
 
-const Box = ({ className, style, children }) => (
-  <div className={`box${className ? ` ${className}` : ''}`} style={{...style, fontStyle: 'italic'}}>{children}</div>
+const Box = ({ className = '', style, ...rest }) => (
+  <div className={`box ${className}`.trim()} style={{fontStyle: 'italic', ...style}} {...rest} />
 );
 
 const smallBox = <Box className="box--small" style={{ backgroundColor: 'lightblue' }}>small lightblue box</Box>
