@@ -8,7 +8,6 @@
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
   <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
   <script type="text/babel">
-    const { PropTypes } = window;
     const Message = ({ greeting, subject }) => <div className="message">{greeting}, {subject}</div>;
     Message.propTypes = {
       subject: PropTypes.string.isRequired,
@@ -16,7 +15,7 @@
     };
     const element = (
       <div className="container">
-        <Message greeting="Hello World" subject={5} />
+        <Message greeting="Hello World"  />
         <Message greeting="Goodbye World" subject="Rick" />
       </div>
     )
